@@ -59,6 +59,7 @@ function draw() {
  
   
   if(gameState===1){
+  score = score + Math.round(getFrameRate()/60);
   camera.position.x = 500;
   camera.position.y = car.y;
  }
@@ -76,6 +77,9 @@ function draw() {
     car.velocityY = 0;
     
   } 
+  textSize(20);
+  fill("black")
+  text("Distance: "+score,30,car.y-300)
   
   drawSprites();
 
